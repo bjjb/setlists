@@ -135,6 +135,7 @@ body {
   background-color: $bg;
   color: $fg;
   font-family: sans-serif;
+  font-size: 2em;
   margin: 20px;
 }
 section {
