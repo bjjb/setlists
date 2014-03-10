@@ -76,6 +76,7 @@ __END__
 %section#song
 
 @@app
+marked.setOptions(breaks: true)
 setlists = setlist = songs = song = null
 
 setlistsTempl = """
