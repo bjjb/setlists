@@ -36,7 +36,7 @@ __END__
 %html(lang="en")
   %head
     %meta(charset="UTF-8")
-    %meta(name="viewport" content="width: device-width, user-scalable=no")
+    %meta(name="viewport" content="width=device-width, user-scalable=no")
     %link(rel="stylesheet" href="/style.css")
     %link(href='//fonts.googleapis.com/css?family=Erica+One|Bangers|Indie+Flower' rel='stylesheet')
     %title= @title
@@ -70,10 +70,6 @@ setlistsTempl = """
 
 setlistTempl = """
   <article class='setlist' id='{{date}}'>
-    <header>
-      <h1>{{name}}</h1>
-      <time>{{date}}</time>
-    </header>
     <ul class='songs'>
       {{#songs}}
         <li>
@@ -85,10 +81,7 @@ setlistTempl = """
 """
 
 songTempl = """
-  <article class='song' id={{id}}>
-    <header>
-      <h1>{{name}}</h1>
-    </header>
+  <article class='song' id={{id}}'>
     <blockquote>
       {{{lyrics}}}
     </blockquote>
@@ -132,63 +125,35 @@ $fg: #444;
 $bg: #eee;
 
 body {
-  background-color: $bg;
-  color: $fg;
-  font-family: sans-serif;
+  margin: 0;
+  background: 0;
   font-size: 2em;
-  margin: 20px;
 }
 section {
   display: none;
   &:target {
-    display: inherit;
+    display: block;
   }
 }
 ul {
-  list-style: none;
-  margin: 0; padding: 0;
   display: block;
-  li {
-    text-align: center;
-    a {
-      display: block;
-      text-decoration: none;
-      color: inherit;
-      font-size: 2em;
-    }
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    line-height: 1.5em;
   }
 }
-
-header {
-  color: white;
-  text-shadow: 1px 1px 3px $fg;
-  z-index: 1;
-  h1 {
-    position: absolute;
-    margin: 0;
-    padding: 0;
-    top: 0;
-    left: 0;
-    text-align: center;
-    z-index: -1;
-  }
-  time {
-    display: none;
-  }
+#setlists ul {
+  font-family: "Erica One";
 }
-#setlists {
-  font-family: "Erica One", serif;
+#setlist ul {
+  font-family: "Bangers";
 }
-#setlist {
-  font-family: "Bangers", sans-serif;
-  h1 { font-family: "Erica One", serif; }
-}
-#song {
-  font-family: "Indie Flower", cursive;
-  h1 { font-family: "Bangers", cursive; }
-  blockquote {
-    background-color: transparentize($bg, 0.8);
-    font-size: 1.4em;
-    z-index: 2;
-  }
+#song blockquote {
+  font-family: "indie Flower";
 }
