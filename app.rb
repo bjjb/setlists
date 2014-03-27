@@ -84,7 +84,6 @@ setlistsTempl = """
     {{#.}}
     <li>
       <a href="{{date}}" data-date="{{date}}">
-        <time>{{date}}</time>
         {{name}}
       </a>
     </li>
